@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import PersonalInfoForm from '@/components/basic-style/PersonalInfoForm.vue'
 import ContactInfoForm from '@/components/basic-style/ContactInfoForm.vue'
 
@@ -35,6 +35,22 @@ function handleSubmit() {
     loading.value = false
   }, 1000)
 }
+
+onMounted(() => {
+  setTimeout(() => {
+    form.value.personal = {
+      first_name: 'John',
+      last_name: 'Doe',
+      dob: '2024-05-28',
+      gender: 'Female'
+    }
+
+    form.value.contact = {
+      address: '123 Main St',
+      phone: '123-456-7890'
+    }
+  }, 1000)
+})
 </script>
 <template>
   <div class="wrapper">
