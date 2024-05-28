@@ -7,7 +7,7 @@ body {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: calc(100vh - 1.5rem);
+  height: calc(100vh - 3rem);
 
   > div:first-child {
     border-right: 1px solid #d9d9d9;
