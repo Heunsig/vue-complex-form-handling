@@ -1,11 +1,76 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import PersonalInfoForm from '@/components/PersonalInfoForm.vue'
+import ContactInfoForm from '@/components/ContactInfoForm.vue'
+
+import VueJsonPretty from 'vue-json-pretty'
+import 'vue-json-pretty/lib/styles.css'
+
+const form = ref({
+  personal: {
+    first_name: '',
+    last_name: '',
+    dob: '',
+    gender: ''
+  },
+  contact: {
+    address: '',
+    phone: ''
+  }
+})
+
+const loading = ref(false)
+const hasFirstNameError = ref(false)
+
+function handleSubmit() {
+  if (form.value.personal.first_name === '') {
+    hasFirstNameError.value = true
+    return
+  }
+
+  loading.value = true
+  hasFirstNameError.value = false
+  setTimeout(() => {
+    alert(JSON.stringify(form.value, null, 2))
+    loading.value = false
+  }, 1000)
+}
 </script>
 <template>
-  <div>
-    <h1>Basic Style</h1>
+  <div class="wrapper">
     <div>
-      <PersonalInfoForm />
+      <h1>Basic Style</h1>
+      <form @submit.prevent="handleSubmit">
+        <div>
+          <PersonalInfoForm v-model="form.personal" :hasFirstNameError="hasFirstNameError" />
+        </div>
+        <div>
+          <ContactInfoForm v-model="form.contact" />
+        </div>
+        <div>
+          <button type="submit">
+            {{ loading ? 'Loading...' : 'Submit' }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <div>
+      <vue-json-pretty :data="form" />
     </div>
   </div>
 </template>
+<style scoped>
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+
+  > div:first-child {
+    border-right: 1px solid #d9d9d9;
+  }
+
+  > div {
+    padding: 0.5rem;
+  }
+}
+</style>
