@@ -73,18 +73,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-<style scoped>
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100vh;
-
-  > div:first-child {
-    border-right: 1px solid #d9d9d9;
-  }
-
-  > div {
-    padding: 0.5rem;
-  }
-}
-</style>
