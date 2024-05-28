@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import PersonalInfoForm from '@/components/PersonalInfoForm.vue'
-import ContactInfoForm from '@/components/ContactInfoForm.vue'
+import PersonalInfoForm from '@/components/basic-style/PersonalInfoForm.vue'
+import ContactInfoForm from '@/components/basic-style/ContactInfoForm.vue'
 
 import VueJsonPretty from 'vue-json-pretty'
 import 'vue-json-pretty/lib/styles.css'
