@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 
 const hasFirstNameError = ref(false)
+const hasLastNameError = ref(false)
 const form = ref({
   first_name: '',
   last_name: '',
@@ -10,16 +11,27 @@ const form = ref({
 })
 
 // Bonus
-// watch(
-//   () => form.value.first_name,
-//   () => {
-//     if (form.value.first_name === '') {
-//       hasFirstNameError.value = true
-//       return
-//     }
-//     hasFirstNameError.value = false
-//   }
-// )
+watch(
+  () => form.value.first_name,
+  () => {
+    if (form.value.first_name === '') {
+      hasFirstNameError.value = true
+      return
+    }
+    hasFirstNameError.value = false
+  }
+)
+
+watch(
+  () => form.value.last_name,
+  () => {
+    if (form.value.last_name === '') {
+      hasLastNameError.value = true
+      return
+    }
+    hasLastNameError.value = false
+  }
+)
 
 function getFormData() {
   if (form.value.first_name === '') {
@@ -43,18 +55,21 @@ defineExpose({
 </script>
 
 <template>
-  <div>
+  <div :class="{ 'has-error': hasFirstNameError || hasLastNameError }">
     <h2>Personal Information</h2>
     <div>
-      <label for="first_name">First Name:</label>
+      <label for="first_name">* First Name:</label>
       <div>
         <input type="text" id="first_name" v-model="form.first_name" />
-        <p v-if="hasFirstNameError">First Name is required.</p>
+        <p v-if="hasFirstNameError" class="error-msg">First Name is required.</p>
       </div>
     </div>
     <div>
-      <label for="last_name">Last Name:</label>
-      <input type="text" id="last_name" v-model="form.last_name" />
+      <label for="last_name">* Last Name:</label>
+      <div>
+        <input type="text" id="last_name" v-model="form.last_name" />
+        <p v-if="hasLastNameError" class="error-msg">Last Name is required.</p>
+      </div>
     </div>
     <div>
       <!-- Date of birth -->
@@ -72,6 +87,10 @@ defineExpose({
   </div>
 </template>
 <style scoped>
+.has-error {
+  background-color: color-mix(in lab, red, transparent 80%);
+}
+
 div:has(> label) {
   margin: 1rem 0;
   display: flex;

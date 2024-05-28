@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import PersonalInfoForm from '@/components/basic-style/PersonalInfoForm.vue'
 import ContactInfoForm from '@/components/basic-style/ContactInfoForm.vue'
 
@@ -21,6 +21,27 @@ const form = ref({
 
 const loading = ref(false)
 const hasFirstNameError = ref(false)
+watch(
+  () => form.value.personal.first_name,
+  (newFirstName) => {
+    if (newFirstName === '') {
+      hasFirstNameError.value = true
+      return
+    }
+    hasFirstNameError.value = false
+  }
+)
+const hasLastNameError = ref(false)
+watch(
+  () => form.value.personal.last_name,
+  (newLastName) => {
+    if (newLastName === '') {
+      hasLastNameError.value = true
+      return
+    }
+    hasLastNameError.value = false
+  }
+)
 
 function handleSubmit() {
   if (form.value.personal.first_name === '') {
@@ -28,8 +49,14 @@ function handleSubmit() {
     return
   }
 
+  if (form.value.personal.last_name === '') {
+    hasLastNameError.value = true
+    return
+  }
+
   loading.value = true
   hasFirstNameError.value = false
+  hasLastNameError.value = false
   setTimeout(() => {
     alert(JSON.stringify(form.value, null, 2))
     loading.value = false
@@ -58,7 +85,11 @@ onMounted(() => {
       <h1>Basic Style</h1>
       <form @submit.prevent="handleSubmit">
         <div>
-          <PersonalInfoForm v-model="form.personal" :hasFirstNameError="hasFirstNameError" />
+          <PersonalInfoForm
+            v-model="form.personal"
+            :hasFirstNameError="hasFirstNameError"
+            :hasLastNameError="hasLastNameError"
+          />
         </div>
         <div>
           <ContactInfoForm v-model="form.contact" />
