@@ -68,18 +68,18 @@ function handleSubmit() {
 }
 
 onMounted(() => {
-  setTimeout(() => {
-    form.value.personal = {
-      first_name: 'John',
-      last_name: 'Doe',
-      dob: '2024-05-28',
-      gender: 'Female'
-    }
-    form.value.contact = {
-      address: '123 Main St',
-      phone: '123-456-7890'
-    }
-  }, 1000)
+  // setTimeout(() => {
+  //   form.value.personal = {
+  //     first_name: 'John',
+  //     last_name: 'Doe',
+  //     dob: '2024-05-28',
+  //     gender: 'Female'
+  //   }
+  //   form.value.contact = {
+  //     address: '123 Main St',
+  //     phone: '123-456-7890'
+  //   }
+  // }, 1000)
 })
 </script>
 <template>
