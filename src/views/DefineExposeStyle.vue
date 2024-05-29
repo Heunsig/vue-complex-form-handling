@@ -46,13 +46,13 @@ function handleSubmit() {
 onMounted(() => {
   // setTimeout(() => {
   //   if (!personalInfoFormRef.value || !contactInfoFormRef.value) return
-  //   personalInfoFormRef.value.setInitValues({
+  //   personalInfoFormRef.value.setFormData({
   //     first_name: 'John',
   //     last_name: 'Doe',
   //     dob: '2024-05-28',
   //     gender: 'Female'
   //   })
-  //   contactInfoFormRef.value.setInitValues({
+  //   contactInfoFormRef.value.setFormData({
   //     address: '123 Main St',
   //     phone: '123-456-7890'
   //   })

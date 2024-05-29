@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 
-const hasFirstNameError = ref(false)
-const hasLastNameError = ref(false)
 const form = ref({
   first_name: '',
   last_name: '',
@@ -10,65 +8,33 @@ const form = ref({
   gender: ''
 })
 
-// Bonus
-watch(
-  () => form.value.first_name,
-  () => {
-    if (form.value.first_name === '') {
-      hasFirstNameError.value = true
-      return
-    }
-    hasFirstNameError.value = false
-  }
-)
-
-watch(
-  () => form.value.last_name,
-  () => {
-    if (form.value.last_name === '') {
-      hasLastNameError.value = true
-      return
-    }
-    hasLastNameError.value = false
-  }
-)
-
 function getFormData() {
-  if (form.value.first_name === '') {
-    hasFirstNameError.value = true
-    throw new Error('First Name is required.')
-  }
-
-  hasFirstNameError.value = false
-
   return form.value
 }
 
-function setInitValues(values: typeof form.value) {
+function setFormData(values: typeof form.value) {
   form.value = values
 }
 
 defineExpose({
   getFormData,
-  setInitValues
+  setFormData
 })
 </script>
 
 <template>
-  <div :class="{ 'has-error': hasFirstNameError || hasLastNameError }">
+  <div>
     <h2>Personal Information</h2>
     <div>
-      <label for="first_name">* First Name:</label>
+      <label for="first_name">First Name:</label>
       <div>
         <input type="text" id="first_name" v-model="form.first_name" />
-        <p v-if="hasFirstNameError" class="error-msg">First Name is required.</p>
       </div>
     </div>
     <div>
-      <label for="last_name">* Last Name:</label>
+      <label for="last_name">Last Name:</label>
       <div>
         <input type="text" id="last_name" v-model="form.last_name" />
-        <p v-if="hasLastNameError" class="error-msg">Last Name is required.</p>
       </div>
     </div>
     <div>
@@ -87,10 +53,6 @@ defineExpose({
   </div>
 </template>
 <style scoped>
-.has-error {
-  background-color: color-mix(in lab, red, transparent 80%);
-}
-
 div:has(> label) {
   margin: 1rem 0;
   display: flex;

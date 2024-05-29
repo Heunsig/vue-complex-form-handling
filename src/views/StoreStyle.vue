@@ -7,9 +7,11 @@
  * Cons:
  * - Parent and child components are tightly coupled
  * - Requires a state management plugin
+ * - Need to continuously manage stateful data
+ * - Need to reset the form when the component is unmounted
  */
 
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { useFormStore } from '@/stores/form'
 import PersonalInfoForm from '@/components/store-style/PersonalInfoForm.vue'
 import ContactInfoForm from '@/components/store-style/ContactInfoForm.vue'
@@ -20,43 +22,9 @@ import 'vue-json-pretty/lib/styles.css'
 const { form, resetForm } = useFormStore()
 
 const loading = ref(false)
-const hasFirstNameError = ref(false)
-watch(
-  () => form.personal.first_name,
-  (newFirstName) => {
-    if (newFirstName === '') {
-      hasFirstNameError.value = true
-      return
-    }
-    hasFirstNameError.value = false
-  }
-)
-const hasLastNameError = ref(false)
-watch(
-  () => form.personal.last_name,
-  (newLastName) => {
-    if (newLastName === '') {
-      hasLastNameError.value = true
-      return
-    }
-    hasLastNameError.value = false
-  }
-)
 
 function handleSubmit() {
-  if (form.personal.first_name === '') {
-    hasFirstNameError.value = true
-    return
-  }
-
-  if (form.personal.last_name === '') {
-    hasLastNameError.value = true
-    return
-  }
-
   loading.value = true
-  hasFirstNameError.value = false
-  hasLastNameError.value = false
   setTimeout(() => {
     alert(JSON.stringify(form, null, 2))
     loading.value = false
@@ -79,7 +47,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  // resetForm()
+  resetForm()
 })
 </script>
 <template>
@@ -88,11 +56,7 @@ onBeforeUnmount(() => {
       <h1>Store Style</h1>
       <form @submit.prevent="handleSubmit">
         <div>
-          <PersonalInfoForm
-            v-model="form.personal"
-            :hasFirstNameError="hasFirstNameError"
-            :hasLastNameError="hasLastNameError"
-          />
+          <PersonalInfoForm v-model="form.personal" />
         </div>
         <div>
           <ContactInfoForm v-model="form.contact" />

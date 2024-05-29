@@ -10,7 +10,7 @@
  * - `provide` and `inject` are advanced features
  */
 
-import { onMounted, provide, ref, watch } from 'vue'
+import { onMounted, provide, ref } from 'vue'
 import PersonalInfoForm from '@/components/provide-inject-style/PersonalInfoForm.vue'
 import ContactInfoForm from '@/components/provide-inject-style/ContactInfoForm.vue'
 
@@ -35,43 +35,9 @@ const form = ref<Form>({
 provide(key, form)
 
 const loading = ref(false)
-const hasFirstNameError = ref(false)
-watch(
-  () => form.value.personal.first_name,
-  (newFirstName) => {
-    if (newFirstName === '') {
-      hasFirstNameError.value = true
-      return
-    }
-    hasFirstNameError.value = false
-  }
-)
-const hasLastNameError = ref(false)
-watch(
-  () => form.value.personal.last_name,
-  (newLastName) => {
-    if (newLastName === '') {
-      hasLastNameError.value = true
-      return
-    }
-    hasLastNameError.value = false
-  }
-)
 
 function handleSubmit() {
-  if (form.value.personal.first_name === '') {
-    hasFirstNameError.value = true
-    return
-  }
-
-  if (form.value.personal.last_name === '') {
-    hasLastNameError.value = true
-    return
-  }
-
   loading.value = true
-  hasFirstNameError.value = false
-  hasLastNameError.value = false
   setTimeout(() => {
     alert(JSON.stringify(form.value, null, 2))
     loading.value = false
@@ -99,11 +65,7 @@ onMounted(() => {
       <h1>Provide Inject Style</h1>
       <form @submit.prevent="handleSubmit">
         <div>
-          <PersonalInfoForm
-            v-model="form.personal"
-            :hasFirstNameError="hasFirstNameError"
-            :hasLastNameError="hasLastNameError"
-          />
+          <PersonalInfoForm v-model="form.personal" />
         </div>
         <div>
           <ContactInfoForm v-model="form.contact" />

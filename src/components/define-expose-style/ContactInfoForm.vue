@@ -10,13 +10,13 @@ function getFormData() {
   return form.value
 }
 
-function setInitValues(values: typeof form.value) {
+function setFormData(values: typeof form.value) {
   form.value = values
 }
 
 defineExpose({
   getFormData,
-  setInitValues
+  setFormData
 })
 </script>
 <template>
