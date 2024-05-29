@@ -6,6 +6,7 @@ import GithubSvg from '@/assets/github-mark.svg'
     <div class="nav">
       <router-link to="/basic" class="link"> Basic Style </router-link>
       <router-link to="/define-expose" class="link"> Define Expose Style </router-link>
+      <router-link to="/provide-inject" class="link"> Provide Inject Style </router-link>
       <div class="divider"></div>
       <a
         href="https://github.com/Heunsig/vue-complex-form-handling"
