@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/provide-inject',
       name: 'provide-inject',
       component: () => import('../views/ProvideInjectStyle.vue')
+    },
+    {
+      path: '/store',
+      name: 'store',
+      component: () => import('../views/StoreStyle.vue')
     }
   ]
 })
