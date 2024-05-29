@@ -85,7 +85,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="wrapper">
     <div>
-      <h1>Basic Style</h1>
+      <h1>Store Style</h1>
       <form @submit.prevent="handleSubmit">
         <div>
           <PersonalInfoForm
