@@ -1,4 +1,15 @@
 <script setup lang="ts">
+/**
+ * Provide Inject Style
+ * Pros:
+ * - `provide` and `inject` are built-in Vue APIs
+ *
+ * Cons:
+ * - Parent and child components are tightly coupled
+ * - Needs defining a symbol for the provide/inject key when using TypeScript
+ * - `provide` and `inject` are advanced features
+ */
+
 import { onMounted, provide, ref, watch } from 'vue'
 import PersonalInfoForm from '@/components/provide-inject-style/PersonalInfoForm.vue'
 import ContactInfoForm from '@/components/provide-inject-style/ContactInfoForm.vue'

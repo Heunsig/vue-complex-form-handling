@@ -1,4 +1,15 @@
 <script setup lang="ts">
+/**
+ * Define Expose Style
+ * Pros:
+ * - No coupling between parent and child components
+ * - Functional
+ * - Easy to define types in TypeScript
+ *
+ * Cons:
+ * - `defineExpose` is an advanced feature
+ */
+
 import { onMounted, ref } from 'vue'
 import PersonalInfoForm from '@/components/define-expose-style/PersonalInfoForm.vue'
 import ContactInfoForm from '@/components/define-expose-style/ContactInfoForm.vue'

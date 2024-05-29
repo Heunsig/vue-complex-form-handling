@@ -1,4 +1,14 @@
 <script setup lang="ts">
+/**
+ * Store Style
+ * Pros:
+ * - The code is the shortest compared to other styles
+ *
+ * Cons:
+ * - Parent and child components are tightly coupled
+ * - Requires a state management plugin
+ */
+
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useFormStore } from '@/stores/form'
 import PersonalInfoForm from '@/components/store-style/PersonalInfoForm.vue'

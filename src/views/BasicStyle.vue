@@ -1,4 +1,15 @@
 <script setup lang="ts">
+/**
+ * Basic Style
+ * Pros:
+ * - Naturally intuitive for Vue3 users
+ *
+ * Cons:
+ * - The code is longer and more complex compared to other styles
+ * - Involves many watchers
+ * - Parent and child components are more tightly coupled than with the provide/inject and store styles
+ */
+
 import { onMounted, ref, watch } from 'vue'
 import PersonalInfoForm from '@/components/basic-style/PersonalInfoForm.vue'
 import ContactInfoForm from '@/components/basic-style/ContactInfoForm.vue'
