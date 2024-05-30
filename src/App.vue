@@ -29,15 +29,29 @@ import GithubSvg from '@/assets/github-mark.svg'
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: #d9d9d9;
+  background-color: #f8f5f2;
+  border-bottom: 1px solid #232323;
 }
 
 .divider {
   flex: 1;
 }
 
+.link:link,
+.link:visited {
+  padding: 0.25rem 0.5rem;
+  color: #222525;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
 .link.router-link-active {
-  font-weight: bold;
-  color: black;
+  font-weight: 600;
+  color: #fffffe;
+  background-color: #078080;
+  border-radius: 3px;
 }
 </style>
