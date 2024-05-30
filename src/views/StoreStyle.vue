@@ -2,7 +2,7 @@
 /**
  * Store Style
  * Pros:
- * - The code is the shortest compared to other styles
+ * - The code is the shortest compared to other styles (Needs review)
  *
  * Cons:
  * - Parent and child components are tightly coupled
