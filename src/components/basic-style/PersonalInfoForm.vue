@@ -68,19 +68,3 @@ watch(
     </div>
   </div>
 </template>
-<style scoped>
-div:has(> label) {
-  margin: 1rem 0;
-  display: flex;
-
-  label {
-    font-weight: bold;
-    width: 8rem;
-  }
-
-  input + .error-msg {
-    color: red;
-    margin: 0;
-  }
-}
-</style>
