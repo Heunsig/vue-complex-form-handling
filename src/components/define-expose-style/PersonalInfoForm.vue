@@ -2,8 +2,7 @@
 import { ref } from 'vue'
 
 const form = ref({
-  first_name: '',
-  last_name: '',
+  fullName: '',
   dob: '',
   gender: ''
 })
@@ -26,15 +25,9 @@ defineExpose({
   <div>
     <h2>Personal Information</h2>
     <div>
-      <label for="first_name">First Name:</label>
+      <label for="fullName">Full Name:</label>
       <div>
-        <input type="text" id="first_name" v-model="form.first_name" />
-      </div>
-    </div>
-    <div>
-      <label for="last_name">Last Name:</label>
-      <div>
-        <input type="text" id="last_name" v-model="form.last_name" />
+        <input type="text" id="fullName" v-model="form.fullName" />
       </div>
     </div>
     <div>

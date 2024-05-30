@@ -47,8 +47,7 @@ onMounted(() => {
   // setTimeout(() => {
   //   if (!personalInfoFormRef.value || !contactInfoFormRef.value) return
   //   personalInfoFormRef.value.setFormData({
-  //     first_name: 'John',
-  //     last_name: 'Doe',
+  //     fullName: 'John Doe',
   //     dob: '2024-05-28',
   //     gender: 'Female'
   //   })

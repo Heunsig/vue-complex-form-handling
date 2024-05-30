@@ -4,8 +4,7 @@ import { defineStore } from 'pinia'
 export const useFormStore = defineStore('form', () => {
   const form = ref({
     personal: {
-      first_name: '',
-      last_name: '',
+      fullName: '',
       dob: '',
       gender: ''
     },
@@ -18,8 +17,7 @@ export const useFormStore = defineStore('form', () => {
   function resetForm() {
     form.value = {
       personal: {
-        first_name: '',
-        last_name: '',
+        fullName: '',
         dob: '',
         gender: ''
       },

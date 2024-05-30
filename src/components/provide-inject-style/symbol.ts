@@ -2,8 +2,7 @@ import type { InjectionKey, Ref } from 'vue'
 
 export type Form = {
   personal: {
-    first_name: string
-    last_name: string
+    fullName: string
     dob: string
     gender: string
   }

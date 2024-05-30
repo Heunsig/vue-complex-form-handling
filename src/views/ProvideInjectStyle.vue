@@ -21,8 +21,7 @@ import { key, type Form } from '@/components/provide-inject-style/symbol'
 
 const form = ref<Form>({
   personal: {
-    first_name: '',
-    last_name: '',
+    fullName: '',
     dob: '',
     gender: ''
   },
@@ -47,8 +46,7 @@ function handleSubmit() {
 onMounted(() => {
   // setTimeout(() => {
   //   form.value.personal = {
-  //     first_name: 'John',
-  //     last_name: 'Doe',
+  //     fullName: 'John Doe',
   //     dob: '2024-05-28',
   //     gender: 'Female'
   //   }
