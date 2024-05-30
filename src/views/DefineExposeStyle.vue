@@ -3,8 +3,10 @@
  * Define Expose Style
  * Pros:
  * - No coupling between parent and child components
+ * - Reusable components
  * - Functional
  * - Easy to define types in TypeScript
+ * - Error handling is easier (Needs review)
  *
  * Cons:
  * - `defineExpose` is an advanced feature
