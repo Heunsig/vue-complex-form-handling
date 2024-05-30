@@ -1,6 +1,6 @@
 # Handling Complex Vue Form
 
-This is an example of how to handle a complex Vue form.
+This is an example of how to handle a complex Vue form. [Live Demo](https://stackblitz.com/~/github.com/Heunsig/vue-complex-form-handling)
 
 ## Project Setup
 
