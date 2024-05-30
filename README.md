@@ -2,6 +2,10 @@
 
 This is an example of how to handle a complex Vue form. [Live Demo](https://stackblitz.com/~/github.com/Heunsig/vue-complex-form-handling)
 
+## Starter Code
+
+You can start with the `starter` branch.
+
 ## Project Setup
 
 ```sh
