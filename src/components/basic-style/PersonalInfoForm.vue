@@ -7,6 +7,7 @@ const props = defineProps<{
     dob: string
     gender: string
   }
+  hasFullNameError: boolean
 }>()
 
 const emit = defineEmits<{
@@ -48,9 +49,10 @@ watch(
   <div>
     <h2>Personal Information</h2>
     <div>
-      <label for="fullName">Full Name:</label>
+      <label for="fullName">* Full Name:</label>
       <div>
         <input type="text" id="fullName" v-model="form.fullName" />
+        <p v-if="hasFullNameError" class="error-msg">First Name is required.</p>
       </div>
     </div>
     <div>

@@ -9,6 +9,7 @@
  * - Requires a state management plugin
  * - Need to continuously manage stateful data
  * - Need to reset the form when the component is unmounted
+ * - Difficult to scope the state to a single component
  */
 
 import { onBeforeUnmount, onMounted, ref } from 'vue'
@@ -18,12 +19,19 @@ import ContactInfoForm from '@/components/store-style/ContactInfoForm.vue'
 
 import VueJsonPretty from 'vue-json-pretty'
 import 'vue-json-pretty/lib/styles.css'
+import { storeToRefs } from 'pinia'
 
-const { form, resetForm } = useFormStore()
+const formStore = useFormStore()
+const { form, hasFullNameError } = storeToRefs(formStore)
 
 const loading = ref(false)
 
 function handleSubmit() {
+  if (form.value.personal.fullName === '') {
+    hasFullNameError.value = true
+    return
+  }
+
   loading.value = true
   setTimeout(() => {
     alert(JSON.stringify(form, null, 2))
@@ -46,7 +54,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  resetForm()
+  formStore.resetForm()
 })
 </script>
 <template>

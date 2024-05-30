@@ -14,6 +14,8 @@ export const useFormStore = defineStore('form', () => {
     }
   })
 
+  const hasFullNameError = ref(false)
+
   function resetForm() {
     form.value = {
       personal: {
@@ -26,10 +28,12 @@ export const useFormStore = defineStore('form', () => {
         phone: ''
       }
     }
+    hasFullNameError.value = false
   }
 
   return {
     form,
+    hasFullNameError,
     resetForm
   }
 })

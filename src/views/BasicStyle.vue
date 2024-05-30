@@ -30,9 +30,16 @@ const form = ref({
 })
 
 const loading = ref(false)
+const hasFullNameError = ref(false)
 
 function handleSubmit() {
+  if (form.value.personal.fullName === '') {
+    hasFullNameError.value = true
+    return
+  }
+
   loading.value = true
+  hasFullNameError.value = false
   setTimeout(() => {
     alert(JSON.stringify(form.value, null, 2))
     loading.value = false
@@ -59,7 +66,7 @@ onMounted(() => {
       <h1>Basic Style</h1>
       <form @submit.prevent="handleSubmit">
         <div>
-          <PersonalInfoForm v-model="form.personal" />
+          <PersonalInfoForm v-model="form.personal" :hasFullNameError="hasFullNameError" />
         </div>
         <div>
           <ContactInfoForm v-model="form.contact" />

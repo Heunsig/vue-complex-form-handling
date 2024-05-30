@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { useFormStore } from '@/stores/form'
+import { storeToRefs } from 'pinia'
 
-const { form } = useFormStore()
+const formStore = useFormStore()
+const { form, hasFullNameError } = storeToRefs(formStore)
 </script>
 
 <template>
   <div>
     <h2>Personal Information</h2>
     <div>
-      <label for="fullName">Full Name:</label>
+      <label for="fullName">* Full Name:</label>
       <div>
         <input type="text" id="fullName" v-model="form.personal.fullName" />
+        <p v-if="hasFullNameError" class="error-msg">First Name is required.</p>
       </div>
     </div>
     <div>
