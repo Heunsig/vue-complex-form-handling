@@ -6,10 +6,10 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   height: calc(100vh - 3rem);
 
-  > div:first-child {
+  > div:not(first-child) {
     border-right: 1px solid #232323;
   }
 

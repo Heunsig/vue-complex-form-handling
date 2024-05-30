@@ -85,5 +85,17 @@ onMounted(() => {
     <div>
       <vue-json-pretty :data="form" />
     </div>
+    <div>
+      <h3>장점</h3>
+      <ul>
+        <li>`provide`와 `inject`는 Vue 내장 API</li>
+      </ul>
+      <h3>단점</h3>
+      <ul>
+        <li>부모와 자식 컴포넌트가 강하게 커플링됨</li>
+        <li>TypeScript를 활용 하려면 `provide`와 `inject`의 키 심볼을 정의해야 함</li>
+        <li>고급 기능이라 초보에게 익숙하지 않을 수 있음</li>
+      </ul>
+    </div>
   </div>
 </template>

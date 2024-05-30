@@ -81,5 +81,17 @@ onMounted(() => {
     <div>
       <vue-json-pretty :data="form" />
     </div>
+    <div>
+      <h3>장점</h3>
+      <ul>
+        <li>Vue3 개발자는 자연스럽게 떠오르는 방식</li>
+      </ul>
+      <h3>단점</h3>
+      <ul>
+        <li>부모와 자식 컴포넌트 간에 너무 강하게 커플링이 됨</li>
+        <li>Watch를 많이 사용해야됨</li>
+        <li>코드가 너무 복잡해짐</li>
+      </ul>
+    </div>
   </div>
 </template>

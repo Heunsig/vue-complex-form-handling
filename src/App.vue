@@ -30,7 +30,7 @@ import GithubSvg from '@/assets/github-mark.svg'
   align-items: center;
   gap: 1rem;
   background-color: #f8f5f2;
-  border-bottom: 1px solid #232323;
+  box-shadow: 0 0 0px 1px #232323;
 }
 
 .divider {

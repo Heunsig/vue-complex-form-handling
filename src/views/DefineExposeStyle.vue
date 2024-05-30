@@ -81,5 +81,20 @@ onMounted(() => {
     <div>
       <vue-json-pretty :data="{}" />
     </div>
+    <div>
+      <h3>장점</h3>
+      <ul>
+        <li>부모와 자식 컴포넌트 간의 커플링이 없음</li>
+        <li>자식 컴포넌트 재사용 가능</li>
+        <li>Functional 함</li>
+        <li>TypeScript에서 타입 정의하기 쉬움</li>
+        <li>에러 핸들링이 쉬움</li>
+      </ul>
+      <h3>단점</h3>
+      <ul>
+        <li>`defineExpose`는 고급 기능이라 초보에게 익숙하지 않을 수 있음</li>
+        <li>TypeScript에서 컴포넌트에 template ref 설정해야 됨</li>
+      </ul>
+    </div>
   </div>
 </template>
