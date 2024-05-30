@@ -6,7 +6,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   height: calc(100vh - 3rem);
 
   > div:not(first-child) {
