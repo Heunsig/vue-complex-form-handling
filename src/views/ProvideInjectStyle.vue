@@ -88,13 +88,13 @@ onMounted(() => {
     <div>
       <h3>장점</h3>
       <ul>
-        <li>`provide`와 `inject`는 Vue 내장 API</li>
+        <li>`provide`와 `inject`는 Vue의 내장 API로 추가 플러그인 설치가 필요 없음</li>
       </ul>
       <h3>단점</h3>
       <ul>
-        <li>부모와 자식 컴포넌트가 강하게 커플링됨</li>
-        <li>TypeScript를 활용 하려면 `provide`와 `inject`의 키 심볼을 정의해야 함</li>
-        <li>고급 기능이라 초보에게 익숙하지 않을 수 있음</li>
+        <li>부모와 자식 컴포넌트 간에 강한 커플링</li>
+        <li>TypeScript 활용 시 `provide`와 `inject`의 키 심볼 정의 필요</li>
+        <li>고급 기능으로 초보자에게 익숙하지 않음</li>
       </ul>
     </div>
   </div>
