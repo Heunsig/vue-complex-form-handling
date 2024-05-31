@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject } from 'vue'
-import { key } from '@/components/provide-inject-style/symbol'
+import { key } from './symbol'
 
 defineProps<{
   hasFullNameError: boolean

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Provide Inject Style
+ * Provide Inject Pattern
  * Pros:
  * - `provide` and `inject` are built-in Vue APIs
  *
@@ -11,13 +11,13 @@
  */
 
 import { onMounted, provide, ref } from 'vue'
-import PersonalInfoForm from '@/components/provide-inject-style/PersonalInfoForm.vue'
-import ContactInfoForm from '@/components/provide-inject-style/ContactInfoForm.vue'
+import PersonalInfoForm from '@/components/provide-inject-pattern/PersonalInfoForm.vue'
+import ContactInfoForm from '@/components/provide-inject-pattern/ContactInfoForm.vue'
 
 import VueJsonPretty from 'vue-json-pretty'
 import 'vue-json-pretty/lib/styles.css'
 
-import { key, type Form } from '@/components/provide-inject-style/symbol'
+import { key, type Form } from '@/components/provide-inject-pattern/symbol'
 
 const form = ref<Form>({
   personal: {

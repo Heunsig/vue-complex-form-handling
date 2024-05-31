@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Define Expose Style
+ * Define Expose Pattern
  * Pros:
  * - No coupling between parent and child components
  * - Reusable components
@@ -13,8 +13,8 @@
  */
 
 import { onMounted, ref } from 'vue'
-import PersonalInfoForm from '@/components/define-expose-style/PersonalInfoForm.vue'
-import ContactInfoForm from '@/components/define-expose-style/ContactInfoForm.vue'
+import PersonalInfoForm from '@/components/define-expose-pattern/PersonalInfoForm.vue'
+import ContactInfoForm from '@/components/define-expose-pattern/ContactInfoForm.vue'
 
 import VueJsonPretty from 'vue-json-pretty'
 import 'vue-json-pretty/lib/styles.css'

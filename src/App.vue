@@ -13,7 +13,7 @@ import GithubSvg from '@/assets/github-mark.svg'
         href="https://github.com/Heunsig/vue-complex-form-handling"
         title="Heunsig/vue-complex-form-handling"
       >
-        <img :src="GithubSvg" alt="Github icon" Pattern="width: 1.5rem" />
+        <img :src="GithubSvg" alt="Github icon" style="width: 1.5rem" />
       </a>
     </div>
     <div>

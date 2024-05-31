@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Basic Style
+ * Basic Pattern
  * Pros:
  * - Naturally intuitive for Vue3 users
  *
@@ -11,8 +11,8 @@
  */
 
 import { onMounted, ref } from 'vue'
-import PersonalInfoForm from '@/components/basic-style/PersonalInfoForm.vue'
-import ContactInfoForm from '@/components/basic-style/ContactInfoForm.vue'
+import PersonalInfoForm from '@/components/basic-pattern/PersonalInfoForm.vue'
+import ContactInfoForm from '@/components/basic-pattern/ContactInfoForm.vue'
 
 import VueJsonPretty from 'vue-json-pretty'
 import 'vue-json-pretty/lib/styles.css'

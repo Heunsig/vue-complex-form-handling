@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Store Style
+ * Store Pattern
  * Pros:
  * - The code is the shortest compared to other styles (Needs review)
  *
@@ -14,8 +14,8 @@
 
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { useFormStore } from '@/stores/form'
-import PersonalInfoForm from '@/components/store-style/PersonalInfoForm.vue'
-import ContactInfoForm from '@/components/store-style/ContactInfoForm.vue'
+import PersonalInfoForm from '@/components/store-pattern/PersonalInfoForm.vue'
+import ContactInfoForm from '@/components/store-pattern/ContactInfoForm.vue'
 
 import VueJsonPretty from 'vue-json-pretty'
 import 'vue-json-pretty/lib/styles.css'
