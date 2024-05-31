@@ -60,7 +60,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="wrapper">
     <div>
-      <h1>Store Style</h1>
+      <h1>Store Pattern</h1>
       <form @submit.prevent="handleSubmit">
         <div>
           <PersonalInfoForm v-model="form.personal" />

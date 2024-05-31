@@ -4,16 +4,16 @@ import GithubSvg from '@/assets/github-mark.svg'
 <template>
   <div>
     <div class="nav">
-      <router-link to="/basic" class="link"> Basic Style </router-link>
-      <router-link to="/provide-inject" class="link"> Provide Inject Style </router-link>
-      <router-link to="/define-expose" class="link"> Define Expose Style </router-link>
-      <router-link to="/store" class="link"> Store Style </router-link>
+      <router-link to="/basic" class="link"> Basic Pattern </router-link>
+      <router-link to="/provide-inject" class="link"> Provide Inject Pattern </router-link>
+      <router-link to="/define-expose" class="link"> Define Expose Pattern </router-link>
+      <router-link to="/store" class="link"> Store Pattern </router-link>
       <div class="divider"></div>
       <a
         href="https://github.com/Heunsig/vue-complex-form-handling"
         title="Heunsig/vue-complex-form-handling"
       >
-        <img :src="GithubSvg" alt="Github icon" style="width: 1.5rem" />
+        <img :src="GithubSvg" alt="Github icon" Pattern="width: 1.5rem" />
       </a>
     </div>
     <div>

@@ -63,7 +63,7 @@ onMounted(() => {
 <template>
   <div class="wrapper">
     <div>
-      <h1>Define Expose Style</h1>
+      <h1>Define Expose Pattern</h1>
       <form @submit.prevent="handleSubmit">
         <div>
           <PersonalInfoForm ref="personalInfoFormRef" />

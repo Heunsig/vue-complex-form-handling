@@ -67,7 +67,7 @@ onMounted(() => {
 <template>
   <div class="wrapper">
     <div>
-      <h1>Provide Inject Style</h1>
+      <h1>Provide Inject Pattern</h1>
       <form @submit.prevent="handleSubmit">
         <div>
           <PersonalInfoForm v-model="form.personal" :hasFullNameError="hasFullNameError" />
